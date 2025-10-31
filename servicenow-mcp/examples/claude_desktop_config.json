@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "servicenow-mcp": {
+      "command": "C:/Users/Admin/Downloads/MCP Server/servicenow-mcp/.venv/Scripts/python.exe",
+      "args": [
+        "C:/Users/Admin/Downloads/MCP Server/servicenow-mcp/src/servicenow_mcp/server_sse.py",
+        "--port",
+        "8080"
+      ],
+      "transport": {
+        "type": "sse",
+        "url": "http://localhost:8080/sse"
+      },
+      "env": {
+        "MCP_TOOL_PACKAGE": "full",
+        "SERVICENOW_INSTANCE_URL": "https://dev194650.service-now.com",
+        "SERVICENOW_USERNAME": "admin",
+        "SERVICENOW_PASSWORD": "REm*tfyE4U9@"
+      }
+    }
+  }
+}
