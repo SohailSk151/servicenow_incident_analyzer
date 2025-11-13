@@ -1,0 +1,35 @@
+# Core Web Framework
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+starlette==0.41.3
+
+# MCP (Model Context Protocol) Server
+mcp==1.1.2
+
+# HTTP Requests
+requests==2.32.3
+
+# LangChain & AI Models
+langchain==0.3.12
+langchain-core==0.3.21
+langchain-community==0.3.11
+langchain-google-genai==2.0.8
+
+# Streamlit (for UI)
+streamlit==1.40.2
+
+# Data Processing & Visualization
+pandas==2.2.3
+plotly==5.24.1
+
+# Configuration & Utilities
+pyyaml==6.0.2
+pydantic==2.10.3
+pydantic-settings==2.6.1
+
+# Type Hints (for older Python versions)
+typing-extensions==4.12.2
+
+# Additional dependencies for production
+python-multipart==0.0.20
+anyio==4.7.0
