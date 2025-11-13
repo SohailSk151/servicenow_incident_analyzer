@@ -411,46 +411,4 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 ```
 
-## 🤝 Contributing
-
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on:
-- Code of Conduct
-- Development setup
-- How to submit pull requests
-- Coding standards
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👥 Authors
-
-- Your Name - Initial work
-
-## 🙏 Acknowledgments
-
-- ServiceNow MCP community
-- LangChain team
-- Streamlit developers
-- Google AI (Gemini) team
-
-## 📞 Support
-
-For issues and questions:
-- Open an issue on GitHub
-- Email: support@yourproject.com
-- Documentation: https://docs.yourproject.com
-
-## 🔮 Roadmap
-
-- [ ] Multi-language support
-- [ ] Email notifications
-- [ ] Advanced analytics dashboard
-- [ ] Mobile app
-- [ ] Integration with Slack/Teams
-- [ ] Automated incident categorization
-- [ ] SLA tracking and alerts
-
----
-
 **Made with ❤️ for better incident management**
