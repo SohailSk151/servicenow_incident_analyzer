@@ -23,22 +23,10 @@ A comprehensive ServiceNow integration platform featuring an AI-powered incident
 - **Intelligent Recommendations**: Get actionable insights for incident resolution
 - **Natural Language Queries**: Ask questions about incidents in plain English
 
-### 🔐 Authentication & Authorization
-- **Dual Role System**: Separate user and admin portals
-- **JWT-based Authentication**: Secure token-based session management
-- **Password Hashing**: bcrypt encryption for secure password storage
-
 ### 📊 User Portal
 - **Submit Incidents**: Create and submit incidents for admin approval
 - **Track Submissions**: Monitor status of submitted incidents (Pending/Approved/Rejected)
 - **AI Assistant**: Interactive chatbot for incident queries
-
-### 👑 Admin Portal
-- **Dashboard Analytics**: Visual insights with pie charts and statistics
-- **Approval Workflow**: Review and approve/reject pending incidents
-- **Full CRUD Operations**: Create, Read, Update, Delete incidents in ServiceNow
-- **Incident Management**: Assign, resolve, and update incidents
-- **User Management**: Add new administrators
 
 ### 🔌 MCP Server (Model Context Protocol)
 - **RESTful API**: Full CRUD operations for ServiceNow incidents
@@ -72,7 +60,6 @@ A comprehensive ServiceNow integration platform featuring an AI-powered incident
 ## 📦 Prerequisites
 
 - **Python**: 3.8 or higher
-- **MySQL**: 5.7 or higher
 - **ServiceNow Instance**: Developer instance or production instance
 - **Google API Key**: For Gemini AI model access
 - **Git**: For cloning the repository
@@ -104,14 +91,6 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4. Setup MySQL Database
-
-```sql
-CREATE DATABASE servicenow_db;
-```
-
-The tables will be created automatically when you first run the Auth API.
-
 ## ⚙️ Configuration
 
 ### 1. Environment Variables
@@ -123,15 +102,6 @@ Create a `.env` file in the `servicenow-mcp/` directory:
 SERVICENOW_INSTANCE_URL=https://dev194650.service-now.com
 SERVICENOW_USERNAME=admin
 SERVICENOW_PASSWORD=your_password
-
-# Database Configuration
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=your_db_password
-DB_NAME=servicenow_db
-
-# JWT Configuration
-JWT_SECRET_KEY=your-super-secret-jwt-key-change-this
 
 # Google AI Configuration
 GOOGLE_API_KEY=your_google_api_key
@@ -211,27 +181,6 @@ Check if all services are running:
 
 ## 📚 API Documentation
 
-### Auth API Endpoints
-
-#### User Authentication
-- `POST /api/auth/register/user` - Register new user
-- `POST /api/auth/login/user` - User login
-- `GET /api/auth/verify` - Verify JWT token
-
-#### Admin Authentication
-- `POST /api/auth/register/admin` - Register new admin
-- `POST /api/auth/login/admin` - Admin login
-
-#### User Operations
-- `POST /api/user/incidents/submit` - Submit incident for approval
-- `GET /api/user/incidents/my-submissions` - Get user's submissions
-
-#### Admin Operations
-- `GET /api/admin/incidents/pending` - Get pending approvals
-- `POST /api/admin/incidents/{id}/approve` - Approve incident
-- `POST /api/admin/incidents/{id}/reject` - Reject incident
-- `GET /api/admin/dashboard/stats` - Get dashboard statistics
-
 ### MCP Server Endpoints
 
 #### Incident Management
@@ -295,28 +244,7 @@ curl "http://localhost:8080/incidents?priority=1&limit=10"
    - Check "My Submissions" to see status
    - Filter by Pending/Approved/Rejected
 
-### For Administrators
 
-1. **Login as Admin**
-   - Use admin credentials to login
-
-2. **View Dashboard**
-   - See statistics and charts
-   - Monitor pending approvals
-
-3. **Review Pending Incidents**
-   - Navigate to "Pending Approvals"
-   - Review incident details
-   - Approve (creates in ServiceNow) or Reject
-
-4. **Manage Incidents**
-   - View all ServiceNow incidents
-   - Update, delete, assign, or resolve
-   - Filter by priority and state
-
-5. **Add Administrators**
-   - Go to "Add Admin"
-   - Create new admin accounts
 
 ## 📁 Project Structure
 
@@ -356,15 +284,6 @@ servicenow-mcp-platform/
 
 ### Common Issues
 
-#### 1. Database Connection Error
-```
-Error: Database connection failed
-```
-**Solution**: 
-- Verify MySQL is running
-- Check DB credentials in `.env`
-- Ensure database `servicenow_db` exists
-
 #### 2. ServiceNow API Error
 ```
 Error: ServiceNow API returned 401
@@ -395,13 +314,6 @@ lsof -i :8000  # or :8080, :8501
 # Kill the process
 kill -9 <PID>
 ```
-
-#### 5. JWT Token Expired
-```
-Error: Token has expired
-```
-**Solution**: Re-login to get a new token
-
 ### Logs
 
 Enable detailed logging:
@@ -410,46 +322,6 @@ Enable detailed logging:
 import logging
 logging.basicConfig(level=logging.DEBUG)
 ```
-
-## 🤝 Contributing
-
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on:
-- Code of Conduct
-- Development setup
-- How to submit pull requests
-- Coding standards
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👥 Authors
-
-- Your Name - Initial work
-
-## 🙏 Acknowledgments
-
-- ServiceNow MCP community
-- LangChain team
-- Streamlit developers
-- Google AI (Gemini) team
-
-## 📞 Support
-
-For issues and questions:
-- Open an issue on GitHub
-- Email: support@yourproject.com
-- Documentation: https://docs.yourproject.com
-
-## 🔮 Roadmap
-
-- [ ] Multi-language support
-- [ ] Email notifications
-- [ ] Advanced analytics dashboard
-- [ ] Mobile app
-- [ ] Integration with Slack/Teams
-- [ ] Automated incident categorization
-- [ ] SLA tracking and alerts
 
 ---
 
